@@ -1067,3 +1067,58 @@ body {
     from { opacity: 1; }
     to { opacity: 0; }
 }
+
+
+/* Estilos para productos sin stock */
+.product-card.sin-stock {
+    position: relative;
+    opacity: 0.85;
+}
+
+.product-card.sin-stock::after {
+    content: 'AGOTADO';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(220, 53, 69, 0.95);
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 15px 25px;
+    border-radius: 8px;
+    z-index: 10;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.product-card.sin-stock .product-image {
+    filter: grayscale(40%) brightness(70%);
+}
+
+.product-card.sin-stock .stock-available {
+    display: none;
+}
+
+.product-card.sin-stock .product-price {
+    color: #6c757d;
+    text-decoration: line-through;
+}
+
+.product-card.sin-stock .buy-btn {
+    display: none !important;
+}
+
+.product-card.sin-stock .product-actions::after {
+    content: 'Producto agotado';
+    display: block;
+    text-align: center;
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    padding: 8px;
+    background-color: rgba(220, 53, 69, 0.1);
+    border-radius: 4px;
+}
