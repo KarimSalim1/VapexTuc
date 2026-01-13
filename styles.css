@@ -6,13 +6,12 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    background-color: #fff;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    background-color: #f0f2f5;
+     background-image: url('https://images.unsplash.com/photo-1550684376-efcbd6e3f031?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #f5f5f5;
 }
 
 /* Estilos del Header */
@@ -159,20 +158,23 @@ body {
 .hero-title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #000;
+    color: #ffffff;
 }
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: #666;
+    color: #aca9a9;
 }
 
 /* Estilos para las secciones de productos */
 .puff-section {
-    margin-bottom: 4rem;
-    padding: 2rem;
-    background: #fff;
-    border: 2px solid #000;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 30px auto;
+    max-width: 1400px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .puff-title {
@@ -1075,23 +1077,7 @@ body {
     opacity: 0.85;
 }
 
-.product-card.sin-stock::after {
-    content: 'AGOTADO';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(220, 53, 69, 0.95);
-    color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
-    padding: 15px 25px;
-    border-radius: 8px;
-    z-index: 10;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    letter-spacing: 1px;
-}
+
 
 .product-card.sin-stock .product-image {
     filter: grayscale(40%) brightness(70%);
@@ -1114,11 +1100,12 @@ body {
     content: 'Producto agotado';
     display: block;
     text-align: center;
-    color: #dc3545;
+    color: #da1327;
     font-weight: bold;
     font-size: 0.9rem;
     margin-top: -10px;
     padding: 8px;
-    background-color: rgba(220, 53, 69, 0.1);
+    background-color: rgba(173, 90, 98, 0.719);
     border-radius: 4px;
 }
+
