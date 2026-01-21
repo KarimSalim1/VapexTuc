@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon">
     <title>VapexTuc</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styleruleta.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -42,11 +43,120 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <section class="hero">
+    <section class="hero">
+        <h2 class="hero-title">Vapeadores Premium en Tucumán</h2>
+        <p class="hero-subtitle">Calidad, variedad y el mejor sabor</p>
+    </section>
+
+    <!-- Sección de Ruleta -->
+    <div class="ruleta-section">
+
+        <!-- Estado de sesión ruleta -->
+        <div class="ruleta-session-bar" id="ruletaSessionBar">
+            <span id="ruletaUserName"></span>
+            <button id="ruletaLoginOpen" class="ruleta-session-btn">
+                <i class="fas fa-sign-in-alt"></i> Iniciar sesión
+            </button>
+            <button id="ruletaLogout" class="ruleta-session-btn ruleta-hidden">
+                <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+            </button>
+        </div>
+
+        <h2><i class="fas fa-gift"></i> Gira y Gana Descuentos Exclusivos</h2>
+        <p class="ruleta-subtitle">Cada giro te da la oportunidad de ganar increíbles premios</p>
+        
+        <div class="ruleta-wrapper">
+            <canvas id="wheelCanvas" width="500" height="500"></canvas>
+            <div class="ruleta-pointer"></div>
+            <button id="spinBtn" class="ruleta-spin-btn">
+                <i class="fas fa-redo-alt"></i> GIRAR
+            </button>
+        </div>
+        
+        <div class="ruleta-info">
+            <p><i class="fas fa-info-circle"></i> Solo puedes girar una vez cada 3 días</p>
+            <p><i class="fas fa-info-circle"></i> Recordá hacer captura del resultado del premio!</p>
+            <p id="nextSpinInfo" class="ruleta-hidden"><i class="fas fa-clock"></i> <span id="remainingTime">Podrás girar nuevamente en</span></p>
+        </div>
+        
+        <!-- Premios disponibles -->
+        <div class="ruleta-prizes">
+            <h3><i class="fas fa-trophy"></i> Premios Disponibles</h3>
+            <div class="ruleta-prizes-grid">
+                <div class="ruleta-prize-item" style="border-color: #ff6b6b;">
+                    <div class="ruleta-prize-icon">❌​</div>
+                    <div class="ruleta-prize-name">Sin recompensa</div>
+                </div>
+                <div class="ruleta-prize-item" style="border-color: #4ecdc4;">
+                    <div class="ruleta-prize-icon">🚚</div>
+                    <div class="ruleta-prize-name">Envío gratis</div>
+                </div>
+                <div class="ruleta-prize-item" style="border-color: #45b7d1;">
+                    <div class="ruleta-prize-icon">💰</div>
+                    <div class="ruleta-prize-name">5% descuento</div>
+                </div>
+                <div class="ruleta-prize-item" style="border-color: #96ceb4;">
+                    <div class="ruleta-prize-icon">💵</div>
+                    <div class="ruleta-prize-name">10% descuento</div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Login/Register para Ruleta -->
+    <div class="ruleta-modal-overlay ruleta-hidden" id="ruletaAuthModal">
+        <div class="ruleta-modal-container">
+            <button class="ruleta-modal-close" id="ruletaCloseModal">&times;</button>
             
-            <h2 class="hero-title">Vapeadores Premium en Tucumán</h2>
-            <p class="hero-subtitle">Calidad, variedad y el mejor sabor</p>
-        </section>
+            <!-- Login Form -->
+            <div class="ruleta-modal-form ruleta-active" id="ruletaLoginForm">
+                <h2><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</h2>
+                <div class="ruleta-form-group">
+                    <input type="email" id="ruletaLoginEmail" placeholder="Correo electrónico" required>
+                </div>
+                <div class="ruleta-form-group">
+                    <input type="password" id="ruletaLoginPassword" placeholder="Contraseña" required>
+                </div>
+                <button id="ruletaLoginBtn" class="ruleta-btn-modal">Ingresar</button>
+                <p class="ruleta-modal-link">¿No tienes cuenta? <a href="#" id="ruletaSwitchToRegister">Regístrate aquí</a></p>
+            </div>
+            
+            <!-- Register Form -->
+            <div class="ruleta-modal-form" id="ruletaRegisterForm">
+                <h2><i class="fas fa-user-plus"></i> Crear Cuenta</h2>
+                <div class="ruleta-form-group">
+                    <input type="text" id="ruletaRegisterName" placeholder="Nombre completo" required>
+                </div>
+                <div class="ruleta-form-group">
+                    <input type="email" id="ruletaRegisterEmail" placeholder="Correo electrónico" required>
+                </div>
+                <div class="ruleta-form-group">
+                    <input type="password" id="ruletaRegisterPassword" placeholder="Contraseña (mínimo 6 caracteres)" required>
+                </div>
+                <button id="ruletaRegisterBtn" class="ruleta-btn-modal">Registrarme</button>
+                <p class="ruleta-modal-link">¿Ya tienes cuenta? <a href="#" id="ruletaSwitchToLogin">Inicia sesión aquí</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Resultado para Ruleta -->
+    <div class="ruleta-modal-overlay ruleta-hidden" id="ruletaResultModal">
+        <div class="ruleta-modal-container ruleta-result-modal">
+            <div class="ruleta-result-content">
+                <div class="ruleta-result-header">
+                    <i class="fas fa-trophy ruleta-result-icon"></i>
+                    <h2>¡Felicidades!</h2>
+                </div>
+                <div class="ruleta-result-body">
+                    <p>Has ganado:</p>
+                    <div class="ruleta-prize-won" id="prizeWon">Sin recompensa</div>
+                    <p id="prizeDescription">Intenta de nuevo en 3 días</p>
+                    <button id="closeResult" class="ruleta-btn-modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <!-- Sección 5K Puff -->
         <section class="puff-section" data-puffs="5K">
@@ -510,5 +620,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="ruleta.js"></script>
 </body>
 </html>
