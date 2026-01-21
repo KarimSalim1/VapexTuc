@@ -335,56 +335,90 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Manejar registro
-    function handleRegister() {
-        const name = elements.ruletaRegisterName.value.trim();
-        const email = elements.ruletaRegisterEmail.value.trim();
-        const password = elements.ruletaRegisterPassword.value;
-        
-        if (!name || !email || !password) {
-            alert('Por favor, completa todos los campos');
-            return;
-        }
-        
-        if (password.length < 6) {
-            alert('La contraseña debe tener al menos 6 caracteres');
-            return;
-        }
-        
-        const users = JSON.parse(localStorage.getItem('ruletaUsers'));
-        
-        // Verificar si el usuario ya existe
-        if (users.some(user => user.email === email)) {
-            alert('Este correo ya está registrado');
-            return;
-        }
-        
-        // Crear nuevo usuario
-        const newUser = {
-            name,
-            email,
-            password,
-            lastSpin: null,
-            spinsHistory: []
-        };
-        
-        users.push(newUser);
-        localStorage.setItem('ruletaUsers', JSON.stringify(users));
-        
-        // Iniciar sesión automáticamente
-        currentUser = newUser;
-        saveCurrentUser();
-        updateSessionBar();
-        elements.ruletaAuthModal.classList.add('ruleta-hidden');
-        updateSpinButton();
-        checkSpinAvailability();
-        
-        // Limpiar formulario
-        elements.ruletaRegisterName.value = '';
-        elements.ruletaRegisterEmail.value = '';
-        elements.ruletaRegisterPassword.value = '';
-        
-        alert('¡Cuenta creada exitosamente!');
+function handleRegister() {
+    const name = elements.ruletaRegisterName.value.trim();
+    const email = elements.ruletaRegisterEmail.value.trim().toLowerCase();
+    const password = elements.ruletaRegisterPassword.value;
+    
+    if (!name || !email || !password) {
+        alert('Por favor, completa todos los campos');
+        return;
     }
+    
+    // Validar longitud de contraseña
+    if (password.length < 6) {
+        alert('La contraseña debe tener al menos 6 caracteres');
+        return;
+    }
+    
+    // Validar formato de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Por favor, ingresa un correo electrónico válido');
+        return;
+    }
+    
+    // Validar que el email sea de Gmail o Hotmail
+    const emailDomain = email.split('@')[1];
+    const allowedDomains = ['gmail.com', 'hotmail.com', 'outlook.com'];
+    
+    if (!allowedDomains.includes(emailDomain)) {
+        alert('Solo se permiten correos de Gmail o Hotmail/Outlook');
+        elements.ruletaRegisterEmail.focus();
+        return;
+    }
+    
+    const users = JSON.parse(localStorage.getItem('ruletaUsers'));
+    
+    // Verificar si el usuario ya existe
+    if (users.some(user => user.email === email)) {
+        alert('Este correo ya está registrado. Por favor, inicia sesión.');
+        switchToLoginForm();
+        return;
+    }
+    
+    // Verificar si hay demasiados registros desde el mismo dominio (protección anti-abuso)
+    const today = new Date().toISOString().split('T')[0];
+    const registrosHoy = users.filter(user => {
+        const userDate = user.registrationDate ? user.registrationDate.split('T')[0] : null;
+        return userDate === today;
+    }).length;
+    
+    // Límite de 10 registros por día (ajustable)
+    if (registrosHoy >= 10) {
+        alert('Se ha alcanzado el límite de registros por hoy. Por favor, intenta mañana.');
+        return;
+    }
+    
+    // Crear nuevo usuario
+    const newUser = {
+        name,
+        email,
+        password,
+        registrationDate: new Date().toISOString(),
+        lastSpin: null,
+        spinsHistory: [],
+        domain: emailDomain // Guardar el dominio para análisis
+    };
+    
+    users.push(newUser);
+    localStorage.setItem('ruletaUsers', JSON.stringify(users));
+    
+    // Iniciar sesión automáticamente
+    currentUser = newUser;
+    saveCurrentUser();
+    updateSessionBar();
+    elements.ruletaAuthModal.classList.add('ruleta-hidden');
+    updateSpinButton();
+    checkSpinAvailability();
+    
+    // Limpiar formulario
+    elements.ruletaRegisterName.value = '';
+    elements.ruletaRegisterEmail.value = '';
+    elements.ruletaRegisterPassword.value = '';
+    
+    alert('¡Cuenta creada exitosamente!');
+}
 
     // Cerrar sesión
     function logout() {
