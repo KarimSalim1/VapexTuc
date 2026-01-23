@@ -162,49 +162,137 @@
         <section class="puff-section" data-puffs="5K">
             <h2 class="puff-title">5K PUFF</h2>
             <div class="products-grid">
-                <!-- Producto 1 -->
+                <!-- Producto 1 con carrusel SIN JavaScript -->
                 <div class="product-card" data-id="1" data-price="12000" data-category="5K" data-stock="15">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/os5000watermelon.jpg" alt="Ice Mint Pro" class="product-image">
+
+                    <div class="vc-container">
+
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-1" id="vc-1-slide-1" checked>
+                        <input type="radio" name="vc-carousel-1" id="vc-1-slide-2">
+                        <input type="radio" name="vc-carousel-1" id="vc-1-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/os5000watermelon.jpg">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/os5000watermelon2.jpg">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/os5000watermelon3.jpg">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-1-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-1-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-1-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-1-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-1-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-1-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-1-slide-1"></label>
+                            <label for="vc-1-slide-2"></label>
+                            <label for="vc-1-slide-3"></label>
+                        </div>
+
                         <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Lost Mary OS5000</h3>
-                    <p class="product-description-short">Refrescante sabor a melón, kiwi y limonada, todo junto.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">5,000 puffs</span>
-                        <span class="feature-tag">Sabor Limonada de sandía y kiwi</span>
-                    </div>
-                    <div class="product-price">$8.000</div>
-                    <div class="product-actions">
+
+                    <div class="product-content">
+                        <h3 class="product-title">Lost Mary OS5000</h3>
+
+                        <p class="product-description-short">
+                            Refrescante sabor a melón, kiwi y limonada.
+                        </p>
+
+                        <div class="product-features">
+                            <span class="feature-tag">5,000 puffs</span>
+                            <span class="feature-tag">Sabor Melón, kiwi y limonada</span>
+                        </div>
+
+                        <div class="product-price">$8.000</div>
+
+                        <div class="product-actions">
                         <button class="action-btn buy-btn" onclick="addToCart(1)">
                             <i class="fas fa-cart-plus"></i> Comprar ahora
                         </button>
-                        
                     </div>
                 </div>
+            </div>
 
-                <!-- Producto 2 -->
-                <div class="product-card" data-id="2" data-price="12500" data-category="5K" data-stock="22">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/lemonlime.jpg" alt="Berry Blast" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+            <!-- Producto 2 con carrusel SIN JavaScript -->
+            <div class="product-card" data-id="2" data-price="12500" data-category="5K" data-stock="22">
+
+                <div class="vc-container">
+
+                    <!-- Radios -->
+                    <input type="radio" name="vc-carousel-2" id="vc-2-slide-1" checked>
+                    <input type="radio" name="vc-carousel-2" id="vc-2-slide-2">
+                    <input type="radio" name="vc-carousel-2" id="vc-2-slide-3">
+
+                    <!-- Carrusel -->
+                    <div class="vc-carousel">
+                        <div class="vc-slide vc-slide-1">
+                            <img src="assets/vapers/lemonlime.jpg" alt="Lost Mary Lemon Lime">
+                        </div>
+                        <div class="vc-slide vc-slide-2">
+                            <img src="assets/vapers/lemolime2.jpg" alt="Lost Mary Lemon Lime lateral">
+                        </div>
+                        <div class="vc-slide vc-slide-3">
+                            <img src="assets/vapers/lemolime3.png" alt="Lost Mary Lemon Lime frontal">
+                        </div>
                     </div>
+
+                    <!-- Flechas -->
+                    <label for="vc-2-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                    <label for="vc-2-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                    <label for="vc-2-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                    <label for="vc-2-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                    <label for="vc-2-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                    <label for="vc-2-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                    <!-- Indicadores -->
+                    <div class="vc-dots">
+                        <label for="vc-2-slide-1"></label>
+                        <label for="vc-2-slide-2"></label>
+                        <label for="vc-2-slide-3"></label>
+                    </div>
+
+                    <span class="stock-available">✓ En stock</span>
+                </div>
+
+                <div class="product-content">
                     <h3 class="product-title">Lost Mary OS5000</h3>
-                    <p class="product-description-short">Explosión de limón.</p>
+
+                    <p class="product-description-short">
+                        Explosión refrescante de limón y lima.
+                    </p>
+
                     <div class="product-features">
                         <span class="feature-tag">5,000 puffs</span>
-                        <span class="feature-tag">Sabor Limonada</span>
+                        <span class="feature-tag">Sabor Lemon Lime</span>
                     </div>
+
                     <div class="product-price">$8.000</div>
+
                     <div class="product-actions">
                         <button class="action-btn buy-btn" onclick="addToCart(2)">
                             <i class="fas fa-cart-plus"></i> Comprar ahora
                         </button>
-                        
                     </div>
                 </div>
 
-                
+            </div>
+
             </div>
         </section>
 
@@ -216,67 +304,175 @@
             <div class="products-grid">
                 
 
-                <!-- Producto 10 -->
-                <div class="product-card " data-id="10" data-price="22500" data-category="15K" data-stock="11">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/strawberryice.jpg" alt="Strawberry Cream" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+               <!-- Producto 10 con carrusel -->
+                <div class="product-card" data-id="10" data-price="22500" data-category="15K" data-stock="11">
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-10" id="vc-10-slide-1" checked>
+                        <input type="radio" name="vc-carousel-10" id="vc-10-slide-2">
+                        <input type="radio" name="vc-carousel-10" id="vc-10-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/strawberryice.jpg" alt="Elfbar BC-15k Strawberry Ice">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/strawberry2.png" alt="Elfbar BC-15k vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/strawberry3.jpg" alt="Elfbar BC-15k vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-10-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-10-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-10-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-10-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-10-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-10-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-10-slide-1"></label>
+                            <label for="vc-10-slide-2"></label>
+                            <label for="vc-10-slide-3"></label>
+                        </div>
+
+                        <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Elfbar BC-15k</h3>
-                    <p class="product-description-short">Un sabor unico de frutilla helada.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">15,000 puffs</span>
-                        <span class="feature-tag">Sabor Frutilla Helada</span>
-                    </div>
-                    <div class="product-price">$14.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(10)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                        
+
+                    <div class="product-content">
+                        <h3 class="product-title">Elfbar BC-15k</h3>
+                        <p class="product-description-short">Un sabor único de frutilla helada.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">15,000 puffs</span>
+                            <span class="feature-tag">Sabor Frutilla Helada</span>
+                        </div>
+                        <div class="product-price">$14.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(10)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Producto 9 -->
-                <div class="product-card  " data-id="9" data-price="22000" data-category="15K" data-stock="7">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/peach.jpg" alt="Blueberry Frost" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+                <!-- Producto 9 con carrusel -->
+                <div class="product-card" data-id="9" data-price="22000" data-category="15K" data-stock="7">
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-9" id="vc-9-slide-1" checked>
+                        <input type="radio" name="vc-carousel-9" id="vc-9-slide-2">
+                        <input type="radio" name="vc-carousel-9" id="vc-9-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/peach.jpg" alt="Elfbar BC-15k Durazno Mango Sandía">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/peach1.jpg" alt="Elfbar BC-15k vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/peach3.jpg" alt="Elfbar BC-15k vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-9-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-9-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-9-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-9-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-9-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-9-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-9-slide-1"></label>
+                            <label for="vc-9-slide-2"></label>
+                            <label for="vc-9-slide-3"></label>
+                        </div>
+
+                        <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Elfbar BC-15k</h3>
-                    <p class="product-description-short">Mezcla de Durazno, mango y sandía. Explosión de sabores. </p>
-                    <div class="product-features">
-                        <span class="feature-tag">15,000 puffs</span>
-                        <span class="feature-tag">Sabor Durazno Mango Sandía</span>
-                    </div>
-                    <div class="product-price">$14.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(9)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                        
+
+                    <div class="product-content">
+                        <h3 class="product-title">Elfbar BC-15k</h3>
+                        <p class="product-description-short">Mezcla de Durazno, mango y sandía. Explosión de sabores.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">15,000 puffs</span>
+                            <span class="feature-tag">Sabor Durazno Mango Sandía</span>
+                        </div>
+                        <div class="product-price">$14.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(9)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
 
 
-                <!-- Producto 11 -->
-                <div class="product-card " data-id="11" data-price="21500" data-category="15K" data-stock="6">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/pineappleice.jpg" alt="Lemon Pie" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+                <!-- Producto 11 con carrusel -->
+                <div class="product-card" data-id="11" data-price="21500" data-category="15K" data-stock="6">
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-11" id="vc-11-slide-1" checked>
+                        <input type="radio" name="vc-carousel-11" id="vc-11-slide-2">
+                        <input type="radio" name="vc-carousel-11" id="vc-11-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/pineappleice.jpg" alt="Elfbar BC-15k Ananá Helada">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/pineapple2.jpg" alt="Elfbar BC-15k vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/pineapple3.jpg" alt="Elfbar BC-15k vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-11-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-11-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-11-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-11-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-11-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-11-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-11-slide-1"></label>
+                            <label for="vc-11-slide-2"></label>
+                            <label for="vc-11-slide-3"></label>
+                        </div>
+
+                        <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Elfbar BC-15k</h3>
-                    <p class="product-description-short">Ananá helada, ideal para el frescor en tu boca. </p>
-                    <div class="product-features">
-                        <span class="feature-tag">15,000 puffs</span>
-                        <span class="feature-tag">Sabor Ananá Helada</span>
-                    </div>
-                    <div class="product-price">$14.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(11)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                        
+
+                    <div class="product-content">
+                        <h3 class="product-title">Elfbar BC-15k</h3>
+                        <p class="product-description-short">Ananá helada, ideal para el frescor en tu boca.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">15,000 puffs</span>
+                            <span class="feature-tag">Sabor Ananá Helada</span>
+                        </div>
+                        <div class="product-price">$14.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(11)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -301,45 +497,117 @@
                     </div>
                 </div>
 
-                <!-- Producto 12 -->
+                <!-- Producto 12 con carrusel -->
                 <div class="product-card" data-id="27" data-price="21800" data-category="15K" data-stock="13">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/lostmary2.jpg" alt="Watermelon Chill" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-27" id="vc-27-slide-1" checked>
+                        <input type="radio" name="vc-carousel-27" id="vc-27-slide-2">
+                        <input type="radio" name="vc-carousel-27" id="vc-27-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/lostmary111.jpg" alt="Lost Mary TURBO Cereza Intensa">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/lostmary112.jpg" alt="Lost Mary TURBO vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/lostmary113.jpg" alt="Lost Mary TURBO vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-27-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-27-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-27-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-27-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-27-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-27-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-27-slide-1"></label>
+                            <label for="vc-27-slide-2"></label>
+                            <label for="vc-27-slide-3"></label>
+                        </div>
+
+                        <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Lost Mary TURBO</h3>
-                    <p class="product-description-short">Sabor de cereza intensa.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">15,000 puffs</span>
-                        <span class="feature-tag">Sabor Cereza Intensa</span>
-                    </div>
-                    <div class="product-price">$13.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(27)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                        
+
+                    <div class="product-content">
+                        <h3 class="product-title">Lost Mary TURBO</h3>
+                        <p class="product-description-short">Sabor de cereza intensa.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">15,000 puffs</span>
+                            <span class="feature-tag">Sabor Cereza Intensa</span>
+                        </div>
+                        <div class="product-price">$13.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(27)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Producto 12 -->
+                <!-- Producto 13 con carrusel -->
                 <div class="product-card" data-id="28" data-price="21800" data-category="15K" data-stock="13">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/lostmary1.jpg" alt="Watermelon Chill" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-28" id="vc-28-slide-1" checked>
+                        <input type="radio" name="vc-carousel-28" id="vc-28-slide-2">
+                        <input type="radio" name="vc-carousel-28" id="vc-28-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/lostmary1.jpg" alt="Lost Mary TURBO Frutilla, Melón y Durazno">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/lostmary21.jpg" alt="Lost Mary TURBO vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/lostmary22.jpg" alt="Lost Mary TURBO vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-28-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-28-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-28-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-28-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-28-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-28-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-28-slide-1"></label>
+                            <label for="vc-28-slide-2"></label>
+                            <label for="vc-28-slide-3"></label>
+                        </div>
+
+                        <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Lost Mary TURBO</h3>
-                    <p class="product-description-short">Un sabor mezcla tropical entre frutilla, melón y durazno.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">15,000 puffs</span>
-                        <span class="feature-tag">Sabor Frutilla, Melón y Durazno</span>
-                    </div>
-                    <div class="product-price">$13.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(28)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                        
+
+                    <div class="product-content">
+                        <h3 class="product-title">Lost Mary TURBO</h3>
+                        <p class="product-description-short">Un sabor mezcla tropical entre frutilla, melón y durazno.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">15,000 puffs</span>
+                            <span class="feature-tag">Sabor Frutilla, Melón y Durazno</span>
+                        </div>
+                        <div class="product-price">$13.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(28)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -349,45 +617,116 @@
         <section class="puff-section" data-puffs="20K">
             <h2 class="puff-title">20K PUFF</h2>
             <div class="products-grid">
-                <!-- Producto 13 -->
+                <!-- Producto 13 con carrusel -->
                 <div class="product-card" data-id="13" data-price="25000" data-category="20K" data-stock="5">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/bluerazz.jpg" alt="Tropical Mix" class="product-image">
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-13" id="vc-13-slide-1" checked>
+                        <input type="radio" name="vc-carousel-13" id="vc-13-slide-2">
+                        <input type="radio" name="vc-carousel-13" id="vc-13-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/bluerazz.jpg" alt="Lost Angel Pro Max Frutos azules">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/bluerazz2.jpg" alt="Lost Angel Pro Max vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/bluerazz3.png" alt="Lost Angel Pro Max vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-13-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-13-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-13-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-13-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-13-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-13-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-13-slide-1"></label>
+                            <label for="vc-13-slide-2"></label>
+                            <label for="vc-13-slide-3"></label>
+                        </div>
+
                         <span class="stock-available">✓ En stock (2)</span>
                     </div>
-                    <h3 class="product-title">Lost Angel Pro Max</h3>
-                    <p class="product-description-short">Un sabor refrescante de frutos azules.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">20,000 puffs</span>
-                        <span class="feature-tag">Sabor Frutos azules </span>
-                    </div>
-                    <div class="product-price">$16.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(13)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                       
+
+                    <div class="product-content">
+                        <h3 class="product-title">Lost Angel Pro Max</h3>
+                        <p class="product-description-short">Un sabor refrescante de frutos azules.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">20,000 puffs</span>
+                            <span class="feature-tag">Sabor Frutos azules</span>
+                        </div>
+                        <div class="product-price">$16.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(13)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Producto 14 -->
+                <!-- Producto 14 con carrusel -->
                 <div class="product-card" data-id="14" data-price="25500" data-category="20K" data-stock="8">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/strawberrybana.jpg" alt="Mint Chocolate" class="product-image">
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-14" id="vc-14-slide-1" checked>
+                        <input type="radio" name="vc-carousel-14" id="vc-14-slide-2">
+                        <input type="radio" name="vc-carousel-14" id="vc-14-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/strawberrybana3.jpg" alt="Lost Angel Pro Max Frutilla Banana">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/strawberrybana2.jpg" alt="Lost Angel Pro Max vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/strawberrybana.jpg" alt="Lost Angel Pro Max vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-14-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-14-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-14-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-14-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-14-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-14-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-14-slide-1"></label>
+                            <label for="vc-14-slide-2"></label>
+                            <label for="vc-14-slide-3"></label>
+                        </div>
+
                         <span class="stock-available">✓ En stock (2)</span>
                     </div>
-                    <h3 class="product-title">Lost Angel Pro Max</h3>
-                    <p class="product-description-short">Mezcla entre fresas y banana.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">20,000 puffs</span>
-                        <span class="feature-tag">Sabor Frutilla Banana</span>
-                    </div>
-                    <div class="product-price">$16.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(14)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                       
+
+                    <div class="product-content">
+                        <h3 class="product-title">Lost Angel Pro Max</h3>
+                        <p class="product-description-short">Mezcla entre fresas y banana.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">20,000 puffs</span>
+                            <span class="feature-tag">Sabor Frutilla Banana</span>
+                        </div>
+                        <div class="product-price">$16.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(14)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -412,24 +751,60 @@
                     </div>
                 </div>
 
-                <!-- Producto 16 -->
+                <!-- Producto 16 con carrusel -->
                 <div class="product-card" data-id="16" data-price="25200" data-category="20K" data-stock="9">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/cherry.jpg" alt="Peach Ice Tea" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-16" id="vc-16-slide-1" checked>
+                        <input type="radio" name="vc-carousel-16" id="vc-16-slide-2">
+                        <input type="radio" name="vc-carousel-16" id="vc-16-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/cherry.jpg" alt="Lost Angel Pro Max Cereza Limón">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/cherry2.jpg" alt="Lost Angel Pro Max vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/cherry3.jpg" alt="Lost Angel Pro Max vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-16-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-16-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-16-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-16-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-16-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-16-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-16-slide-1"></label>
+                            <label for="vc-16-slide-2"></label>
+                            <label for="vc-16-slide-3"></label>
+                        </div>
+
+                        <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Lost Angel Pro Max</h3>
-                    <p class="product-description-short">Mezcla entre cereza y limón.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">20,000 puffs</span>
-                        <span class="feature-tag">Sabor Cereza Limon</span>
-                    </div>
-                    <div class="product-price">$16.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(16)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                        
+
+                    <div class="product-content">
+                        <h3 class="product-title">Lost Angel Pro Max</h3>
+                        <p class="product-description-short">Mezcla entre cereza y limón.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">20,000 puffs</span>
+                            <span class="feature-tag">Sabor Cereza Limon</span>
+                        </div>
+                        <div class="product-price">$16.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(16)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -441,24 +816,60 @@
         <section class="puff-section" data-puffs="25K">
             <h2 class="puff-title">25K PUFF</h2>
             <div class="products-grid">
-                <!-- Producto 17 -->
+                <!-- Producto 17 con carrusel -->
                 <div class="product-card" data-id="17" data-price="28000" data-category="25K" data-stock="6">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/space.jpg" alt="Red Energy" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-17" id="vc-17-slide-1" checked>
+                        <input type="radio" name="vc-carousel-17" id="vc-17-slide-2">
+                        <input type="radio" name="vc-carousel-17" id="vc-17-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/space.jpg" alt="Elfbar Planet Space Menta Intensa">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/space2.jpg" alt="Elfbar Planet Space vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/space3.jpg" alt="Elfbar Planet Space vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-17-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-17-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-17-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-17-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-17-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-17-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-17-slide-1"></label>
+                            <label for="vc-17-slide-2"></label>
+                            <label for="vc-17-slide-3"></label>
+                        </div>
+
+                        <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Elfbar Planet Space</h3>
-                    <p class="product-description-short">Sabor a menta intensa.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">25,000 puffs</span>
-                        <span class="feature-tag">Sabor Menta Intensa</span>
-                    </div>
-                    <div class="product-price">$18.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(17)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                        
+
+                    <div class="product-content">
+                        <h3 class="product-title">Elfbar Planet Space</h3>
+                        <p class="product-description-short">Sabor a menta intensa.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">25,000 puffs</span>
+                            <span class="feature-tag">Sabor Menta Intensa</span>
+                        </div>
+                        <div class="product-price">$18.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(17)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -469,24 +880,60 @@
             <h2 class="puff-title">40K PUFF</h2>
             <div class="products-grid">
 
-                <!-- Producto 21 -->
-                <div class="product-card " data-id="26" data-price="35000" data-category="40K" data-stock="3">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/passionflash.png" alt="Dragon Fruit" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+                <!-- Producto 21 con carrusel -->
+                <div class="product-card" data-id="26" data-price="35000" data-category="40K" data-stock="3">
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-26" id="vc-26-slide-1" checked>
+                        <input type="radio" name="vc-carousel-26" id="vc-26-slide-2">
+                        <input type="radio" name="vc-carousel-26" id="vc-26-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/passionflash.png" alt="Elfbar Ice King Summer Edition Maracuyá Dulce">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/passionflash2.jpg" alt="Elfbar Ice King Summer Edition vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/passionflash3.jpg" alt="Elfbar Ice King Summer Edition vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-26-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-26-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-26-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-26-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-26-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-26-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-26-slide-1"></label>
+                            <label for="vc-26-slide-2"></label>
+                            <label for="vc-26-slide-3"></label>
+                        </div>
+
+                        <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Elfbar Ice King Summer Edition</h3>
-                    <p class="product-description-short">Sabor Maracuyá dulce y refrescante.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">40,000 puffs</span>
-                        <span class="feature-tag">Sabor Maracuyá Duce</span>
-                    </div>
-                    <div class="product-price">$25.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(26)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                       
+
+                    <div class="product-content">
+                        <h3 class="product-title">Elfbar Ice King Summer Edition</h3>
+                        <p class="product-description-short">Sabor Maracuyá dulce y refrescante.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">40,000 puffs</span>
+                            <span class="feature-tag">Sabor Maracuyá Dulce</span>
+                        </div>
+                        <div class="product-price">$25.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(26)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -516,63 +963,174 @@
 
                 
 
-                <div class="product-card " data-id="22" data-price="35000" data-category="40K" data-stock="3">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/watermelonk.jpg" alt="Dragon Fruit" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+                <!-- Producto 22 con carrusel -->
+                <div class="product-card" data-id="22" data-price="35000" data-category="40K" data-stock="3">
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-22" id="vc-22-slide-1" checked>
+                        <input type="radio" name="vc-carousel-22" id="vc-22-slide-2">
+                        <input type="radio" name="vc-carousel-22" id="vc-22-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/watermelonk.jpg" alt="Elfbar Ice King Fusión de Cerezas">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/watermelonk2.png" alt="Elfbar Ice King vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/watermelonk3.png" alt="Elfbar Ice King vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-22-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-22-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-22-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-22-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-22-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-22-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-22-slide-1"></label>
+                            <label for="vc-22-slide-2"></label>
+                            <label for="vc-22-slide-3"></label>
+                        </div>
+
+                        <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Elfbar Ice King</h3>
-                    <p class="product-description-short">Sabor de fusión entre las mejores cerezas.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">40,000 puffs</span>
-                        <span class="feature-tag">Sabor Fusión de Cerezas</span>
-                    </div>
-                    <div class="product-price">$25.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(22)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                       
+
+                    <div class="product-content">
+                        <h3 class="product-title">Elfbar Ice King</h3>
+                        <p class="product-description-short">Sabor de fusión entre las mejores cerezas.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">40,000 puffs</span>
+                            <span class="feature-tag">Sabor Fusión de Cerezas</span>
+                        </div>
+                        <div class="product-price">$25.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(22)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="product-card " data-id="23" data-price="35000" data-category="40K" data-stock="3">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/peachh.jpg" alt="Dragon Fruit" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+                <!-- Producto 23 con carrusel -->
+                <div class="product-card" data-id="23" data-price="35000" data-category="40K" data-stock="3">
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-23" id="vc-23-slide-1" checked>
+                        <input type="radio" name="vc-carousel-23" id="vc-23-slide-2">
+                        <input type="radio" name="vc-carousel-23" id="vc-23-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/peachh.jpg" alt="Elfbar Ice King Durazno Intenso">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/peachh2.jpg" alt="Elfbar Ice King vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/peachh3.jpg" alt="Elfbar Ice King vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-23-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-23-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-23-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-23-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-23-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-23-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-23-slide-1"></label>
+                            <label for="vc-23-slide-2"></label>
+                            <label for="vc-23-slide-3"></label>
+                        </div>
+
+                        <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Elfbar Ice King</h3>
-                    <p class="product-description-short">Sabor a durazno intenso.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">40,000 puffs</span>
-                        <span class="feature-tag">Sabor Durazno Intenso</span>
-                    </div>
-                    <div class="product-price">$25.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(23)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                       
+
+                    <div class="product-content">
+                        <h3 class="product-title">Elfbar Ice King</h3>
+                        <p class="product-description-short">Sabor a durazno intenso.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">40,000 puffs</span>
+                            <span class="feature-tag">Sabor Durazno Intenso</span>
+                        </div>
+                        <div class="product-price">$25.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(23)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Producto 24 con carrusel -->
                 <div class="product-card" data-id="24" data-price="35000" data-category="40K" data-stock="3">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/tripleberry.jpg" alt="Dragon Fruit" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
+                    <div class="vc-container">
+                        <!-- Radios -->
+                        <input type="radio" name="vc-carousel-24" id="vc-24-slide-1" checked>
+                        <input type="radio" name="vc-carousel-24" id="vc-24-slide-2">
+                        <input type="radio" name="vc-carousel-24" id="vc-24-slide-3">
+
+                        <!-- Carrusel -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1">
+                                <img src="assets/vapers/tripleberry.jpg" alt="Elfbar Ice King Summer Edition Frutilla Triple">
+                            </div>
+                            <div class="vc-slide vc-slide-2">
+                                <img src="assets/vapers/tripleberry2.jpg" alt="Elfbar Ice King Summer Edition vista lateral">
+                            </div>
+                            <div class="vc-slide vc-slide-3">
+                                <img src="assets/vapers/tripleberry3.jpg" alt="Elfbar Ice King Summer Edition vista frontal">
+                            </div>
+                        </div>
+
+                        <!-- Flechas -->
+                        <label for="vc-24-slide-3" class="vc-arrow vc-a1 prev">‹</label>
+                        <label for="vc-24-slide-2" class="vc-arrow vc-a1 next">›</label>
+
+                        <label for="vc-24-slide-1" class="vc-arrow vc-a2 prev">‹</label>
+                        <label for="vc-24-slide-3" class="vc-arrow vc-a2 next">›</label>
+
+                        <label for="vc-24-slide-2" class="vc-arrow vc-a3 prev">‹</label>
+                        <label for="vc-24-slide-1" class="vc-arrow vc-a3 next">›</label>
+
+                        <!-- Indicadores -->
+                        <div class="vc-dots">
+                            <label for="vc-24-slide-1"></label>
+                            <label for="vc-24-slide-2"></label>
+                            <label for="vc-24-slide-3"></label>
+                        </div>
+
+                        <span class="stock-available">✓ En stock</span>
                     </div>
-                    <h3 class="product-title">Elfbar Ice King Summer Edition</h3>
-                    <p class="product-description-short">Sabor a frutilla intensa.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">40,000 puffs</span>
-                        <span class="feature-tag">Sabor Frutilla triple</span>
-                    </div>
-                    <div class="product-price">$25.500</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(24)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                        
+
+                    <div class="product-content">
+                        <h3 class="product-title">Elfbar Ice King Summer Edition</h3>
+                        <p class="product-description-short">Sabor a frutilla intensa.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">40,000 puffs</span>
+                            <span class="feature-tag">Sabor Frutilla Triple</span>
+                        </div>
+                        <div class="product-price">$25.500</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(24)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

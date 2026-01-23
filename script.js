@@ -28,15 +28,20 @@ function getCurrentPrice(productElement) {
     return parseInt(productElement.dataset.price) || 0;
 }
 
-// Agregar producto al carrito - VERSIÓN QUE ACTUALIZA PRECIO
+// Agregar producto al carrito - VERSIÓN CORREGIDA PARA CARRUSEL
 function addToCart(productId) {
+    console.log("addToCart llamado para producto:", productId);
+    
     // Obtener el elemento del producto
     const productElement = document.querySelector(`.product-card[data-id="${productId}"]`);
     
     if (!productElement) {
+        console.error("Producto no encontrado con id:", productId);
         showNotification('Producto no encontrado', 'error');
         return;
     }
+    
+    console.log("Elemento del producto encontrado:", productElement);
     
     // Extraer el SABOR del segundo feature-tag
     const featureTags = productElement.querySelectorAll('.feature-tag');
@@ -51,16 +56,55 @@ function addToCart(productId) {
         }
     });
     
+    // OBTENER LA IMAGEN DEL CARRUSEL - CORREGIDO
+    let productImage = '';
+    
+    // Buscar en el carrusel de Vapex (nueva estructura)
+    const vcContainer = productElement.querySelector('.vc-container');
+    if (vcContainer) {
+        // Buscar la primera imagen visible en el carrusel
+        const visibleSlides = vcContainer.querySelectorAll('.vc-slide');
+        let activeSlide = null;
+        
+        // Buscar slide visible
+        for (const slide of visibleSlides) {
+            const style = window.getComputedStyle(slide);
+            if (style.display === 'flex' || style.display === 'block') {
+                activeSlide = slide;
+                break;
+            }
+        }
+        
+        // Si no se encontró visible, tomar el primero
+        if (!activeSlide && visibleSlides.length > 0) {
+            activeSlide = visibleSlides[0];
+        }
+        
+        if (activeSlide) {
+            const img = activeSlide.querySelector('img');
+            if (img && img.src) {
+                productImage = img.src;
+            }
+        }
+    }
+    
+    // Si no se encontró en el carrusel Vapex, usar placeholder
+    if (!productImage) {
+        productImage = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI1MCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjI1MCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNGNUY1RjUiLz48cmVjdCB4PSI1MCIgeT0iNTAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRTBFMEUwIi8+PHRleHQgeD0iMTI1IiB5PSIxMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iIzY2NjY2NiI+VmFwZXhUdWM8L3RleHQ+PHRleHQgeD0iMTI1IiB5PSIxNDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzk5OTk5OSI+UHJvZHVjdG88L3RleHQ+PC9zdmc+';
+    }
+    
     // Extraer datos del producto CON PRECIO ACTUAL DEL HTML
     const productData = {
         id: productId,
         title: productElement.querySelector('.product-title').textContent,
         price: getCurrentPrice(productElement), // PRECIO ACTUAL
         category: productElement.dataset.category,
-        image: productElement.querySelector('.product-image').getAttribute('src'),
+        image: productImage, // IMAGEN CORREGIDA
         stock: parseInt(productElement.dataset.stock) || 10,
         flavor: flavor
     };
+    
+    console.log("Datos del producto:", productData);
     
     // Buscar si ya existe en el carrito
     const existingItem = cart.find(item => item.id === productId);
@@ -127,10 +171,43 @@ function updateCartPrices() {
                 item.flavor = newFlavor;
                 updated = true;
             }
+            
+            // Actualizar imagen si cambió (por el carrusel)
+            let newImage = '';
+            const vcContainer = productElement.querySelector('.vc-container');
+            if (vcContainer) {
+                const visibleSlides = vcContainer.querySelectorAll('.vc-slide');
+                let activeSlide = null;
+                
+                for (const slide of visibleSlides) {
+                    const style = window.getComputedStyle(slide);
+                    if (style.display === 'flex' || style.display === 'block') {
+                        activeSlide = slide;
+                        break;
+                    }
+                }
+                
+                if (!activeSlide && visibleSlides.length > 0) {
+                    activeSlide = visibleSlides[0];
+                }
+                
+                if (activeSlide) {
+                    const img = activeSlide.querySelector('img');
+                    if (img && img.src) {
+                        newImage = img.src;
+                    }
+                }
+            }
+            
+            if (newImage && item.image !== newImage) {
+                item.image = newImage;
+                updated = true;
+            }
         }
     });
     
     if (updated) {
+        console.log("Precios actualizados en el carrito");
         updateCart();
     }
 }
@@ -413,11 +490,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Manejar imágenes que fallan al cargar
     handleBrokenImages();
+    
+    // *** ELIMINADO: setupButtonListeners() - Causaba que se agreguen 2 productos ***
 });
 
 // Manejar imágenes rotas
 function handleBrokenImages() {
-    const images = document.querySelectorAll('.product-image');
+    const images = document.querySelectorAll('.vc-slide img');
     
     images.forEach(img => {
         img.addEventListener('error', function() {
@@ -450,3 +529,36 @@ function quickBuy(productId, quantity = 1) {
         addToCart(productId);
     }
 }
+
+// ===================== CORRECCIÓN PARA CARRUSEL =====================
+// Esto asegura que los botones funcionen incluso si hay problemas con el carrusel
+
+// Sobreescribir el comportamiento de los botones si es necesario
+function fixCarouselButtonIssues() {
+    // Asegurar que todos los botones tengan z-index alto
+    const allBuyButtons = document.querySelectorAll('.buy-btn');
+    
+    allBuyButtons.forEach(btn => {
+        // Aplicar estilos inline para prioridad máxima
+        btn.style.zIndex = '10000';
+        btn.style.position = 'relative';
+        btn.style.pointerEvents = 'auto';
+    });
+    
+    // Asegurar que los elementos del carrusel no interfieran
+    const carouselElements = document.querySelectorAll('.vc-container');
+    
+    carouselElements.forEach(container => {
+        container.style.pointerEvents = 'none';
+        
+        // Permitir interacción solo en flechas e indicadores
+        const arrows = container.querySelectorAll('.vc-arrow');
+        const dots = container.querySelectorAll('.vc-dots label');
+        
+        arrows.forEach(arrow => arrow.style.pointerEvents = 'auto');
+        dots.forEach(dot => dot.style.pointerEvents = 'auto');
+    });
+}
+
+// Ejecutar la corrección después de que la página cargue completamente
+window.addEventListener('load', fixCarouselButtonIssues);
