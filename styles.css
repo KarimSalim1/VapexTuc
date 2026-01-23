@@ -1653,3 +1653,61 @@ body {
 #vc-24-slide-3:checked ~ .vc-dots label[for="vc-24-slide-3"] {
     background: #ffffff00;
 }
+
+
+
+/* ===============================
+   SOLUCIÓN PARA Z-INDEX DEL MODAL
+================================ */
+
+/* Asegurar que el modal esté POR ENCIMA de TODO */
+#cart-modal {
+    z-index: 9999 !important; /* Muy alto para estar sobre todo */
+    position: fixed;
+}
+
+.modal-content {
+    z-index: 10000 !important; /* Más alto que el modal */
+    position: relative;
+}
+
+/* Los botones dentro de las tarjetas deben estar DETRÁS del modal */
+.product-card .action-btn.buy-btn {
+    z-index: 10 !important; /* Reducido significativamente */
+    position: relative;
+}
+
+/* Los botones dentro del modal deben tener prioridad */
+.modal-content .action-btn,
+.modal-content .checkout-btn-modal,
+.modal-content .continue-btn {
+    z-index: 10001 !important; /* El más alto de todos */
+    position: relative;
+}
+
+/* Asegurar que el overlay cubra todo */
+.modal {
+    background-color: rgba(0, 0, 0, 0.8) !important; /* Más oscuro para mejor contraste */
+}
+
+/* Deshabilitar interacción con elementos detrás del modal */
+.modal.show ~ * {
+    pointer-events: none !important;
+}
+
+/* Solución alternativa más agresiva si no funciona */
+.fix-zindex-override {
+    position: fixed !important;
+    z-index: 99999 !important;
+}
+
+/* Asegurar que los elementos del carrusel no interfieran */
+.vc-container {
+    z-index: 1 !important; /* Bajo, solo para el carrusel */
+}
+
+/* Los botones dentro de las tarjetas deben resetearse */
+.product-actions {
+    z-index: 5 !important;
+    position: relative;
+}
