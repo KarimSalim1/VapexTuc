@@ -43,19 +43,19 @@
 
     <!-- Main Content -->
     <main class="main-content">
-    <section id="video-banner-container">
-    <video id="vapextuc-video-banner" autoplay muted loop playsinline>
-        <source src="/assets/1.mp4" type="video/mp4">
-        <source src="/assets/2.webm" type="video/webm">
-        Tu navegador no soporta videos HTML5.
-    </video>
-    
-    <div class="video-overlay">
-        <h2 class="video-title">Descubre la Experiencia Vapextuc</h2>
-        <p class="video-subtitle">Calidad premium y los mejores sabores en un solo lugar</p>
-        
-    </div>
-</section>
+        <section id="video-banner-container">
+            <video id="vapextuc-video-banner" autoplay muted loop playsinline>
+                <source src="/assets/1.mp4" type="video/mp4">
+                <source src="/assets/2.webm" type="video/webm">
+                Tu navegador no soporta videos HTML5.
+            </video>
+            
+            <div class="video-overlay">
+                <h2 class="video-title">Descubre la Experiencia Vapextuc</h2>
+                <p class="video-subtitle">Calidad premium y los mejores sabores en un solo lugar</p>
+                
+            </div>
+        </section>
 
     <!-- Sección de Ruleta -->
     <div class="ruleta-section">
@@ -172,13 +172,9 @@
             <h2 class="puff-title">5K PUFF</h2>
             <div class="products-grid">
                 
-            
-
-                <!-- Producto 2 con carrusel SIN JavaScript -->
+                <!-- Producto 2 con carrusel -->
                 <div class="product-card" data-id="2" data-price="12500" data-category="5K" data-stock="22">
-
                     <div class="vc-container">
-
                         <!-- Radios -->
                         <input type="radio" name="vc-carousel-2" id="vc-2-slide-1" checked>
                         <input type="radio" name="vc-carousel-2" id="vc-2-slide-2">
@@ -219,18 +215,14 @@
 
                     <div class="product-content">
                         <h3 class="product-title">Lost Mary OS5000</h3>
-
                         <p class="product-description-short">
                             Explosión refrescante de limón y lima.
                         </p>
-
                         <div class="product-features">
                             <span class="feature-tag">5,000 puffs</span>
                             <span class="feature-tag">Sabor Lemon Lime</span>
                         </div>
-
                         <div class="product-price">$8.000</div>
-
                         <div class="product-actions">
                             <button class="action-btn buy-btn" onclick="addToCart(2)">
                                 <i class="fas fa-cart-plus"></i> Comprar ahora
@@ -239,31 +231,36 @@
                     </div>
                 </div>
 
-            
+                <!-- Producto 12 (CON EL MISMO FORMATO) -->
+                <div class="product-card sin-stock" data-id="12" data-price="21800" data-category="5K" data-stock="13">
+                    <!-- DEBERÍAS CONVERTIR ESTE A .vc-container TAMBIÉN O AJUSTAR CSS -->
+                    <div class="vc-container">
+                        <!-- Si no tienes imágenes múltiples, usa solo una -->
+                        <div class="vc-carousel">
+                            <div class="vc-slide vc-slide-1" style="display: flex;">
+                                <img src="assets/vapers/os5000watermelon.jpg" alt="Watermelon Chill" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <span class="stock-available">✓ En stock</span>
+                    </div>
 
-            <div class="product-card sin-stock" data-id="12" data-price="21800" data-category="15K" data-stock="13">
-                    <div class="product-image-container">
-                        <img src="assets/vapers/os5000watermelon.jpg" alt="Watermelon Chill" class="product-image">
-                        <span class="stock-available">✓ En stock </span>
-                    </div>
-                    <h3 class="product-title">Lost Mary OS5000</h3>
-                    <p class="product-description-short">Refrescante sabor a melón, kiwi y limonada.</p>
-                    <div class="product-features">
-                        <span class="feature-tag">5,000 puffs</span>
-                        <span class="feature-tag">Sabor Melón, Kiwi y Limonada</span>
-                    </div>
-                    <div class="product-price">$8.000</div>
-                    <div class="product-actions">
-                        <button class="action-btn buy-btn" onclick="addToCart(12)">
-                            <i class="fas fa-cart-plus"></i> Comprar ahora
-                        </button>
-                        
+                    <div class="product-content">
+                        <h3 class="product-title">Lost Mary OS5000</h3>
+                        <p class="product-description-short">Refrescante sabor a melón, kiwi y limonada.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">5,000 puffs</span>
+                            <span class="feature-tag">Sabor Melón, Kiwi y Limonada</span>
+                        </div>
+                        <div class="product-price">$8.000</div>
+                        <div class="product-actions">
+                            <button class="action-btn buy-btn" onclick="addToCart(12)">
+                                <i class="fas fa-cart-plus"></i> Comprar ahora
+                            </button>
+                        </div>
                     </div>
                 </div>
-            
-
+                
             </div>
-        
         </section>
 
         
@@ -387,6 +384,7 @@
                         </div>
                     </div>
                 </div>
+            
 
 
                 <!-- Producto 11 con carrusel -->
