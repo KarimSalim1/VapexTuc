@@ -1095,7 +1095,7 @@ body {
 /* Mejoras para responsive */
 @media (max-width: 768px) {
     .puff-section {
-        padding: 1rem;
+        padding: 0rem;
     }
 
     .product-description-short {
