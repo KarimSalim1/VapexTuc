@@ -1947,3 +1947,36 @@ body {
 }
 
 
+
+
+/* ====================================================
+   CARRUSEL SOLO PARA PRODUCTO 21 (Frambuesa Azul)
+   ==================================================== */
+
+/* Slides activos para producto 21 */
+#vc-21-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+
+#vc-21-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+
+#vc-21-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+
+/* Mostrar flechas para producto 21 */
+#vc-21-slide-1:checked ~ .vc-a1,
+#vc-21-slide-2:checked ~ .vc-a2,
+#vc-21-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+
+/* Indicador activo para producto 21 */
+#vc-21-slide-1:checked ~ .vc-dots label[for="vc-21-slide-1"],
+#vc-21-slide-2:checked ~ .vc-dots label[for="vc-21-slide-2"],
+#vc-21-slide-3:checked ~ .vc-dots label[for="vc-21-slide-3"] {
+    background: #ffffff00;
+}
+
