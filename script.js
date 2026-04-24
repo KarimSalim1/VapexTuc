@@ -424,7 +424,7 @@ function proceedToCheckout() {
     
     // Codificar mensaje para URL
     const mensajeCodificado = encodeURIComponent(mensaje);
-    const numeroWhatsApp = '+5493813256714';
+    const numeroWhatsApp = '+5493816941888'; // Reemplaza con tu número de WhatsApp en formato internacional sin espacios ni guiones
     
     // Crear URL de WhatsApp
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
