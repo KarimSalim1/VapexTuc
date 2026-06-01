@@ -1980,3 +1980,73 @@ body {
     background: #ffffff00;
 }
 
+
+
+
+
+/* ===============================
+   VAPEX CARRUSEL – PRODUCTOS 10K
+   ============================== */
+
+/* Producto 101 - Peach Mango Watermelon */
+#vc-101-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-101-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-101-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-101-slide-1:checked ~ .vc-a1,
+#vc-101-slide-2:checked ~ .vc-a2,
+#vc-101-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-101-slide-1:checked ~ .vc-dots label[for="vc-101-slide-1"],
+#vc-101-slide-2:checked ~ .vc-dots label[for="vc-101-slide-2"],
+#vc-101-slide-3:checked ~ .vc-dots label[for="vc-101-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 102 - Strawberry Chew */
+#vc-102-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-102-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-102-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-102-slide-1:checked ~ .vc-a1,
+#vc-102-slide-2:checked ~ .vc-a2,
+#vc-102-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-102-slide-1:checked ~ .vc-dots label[for="vc-102-slide-1"],
+#vc-102-slide-2:checked ~ .vc-dots label[for="vc-102-slide-2"],
+#vc-102-slide-3:checked ~ .vc-dots label[for="vc-102-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 103 - Kiwi Passion Fruit */
+#vc-103-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-103-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-103-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-103-slide-1:checked ~ .vc-a1,
+#vc-103-slide-2:checked ~ .vc-a2,
+#vc-103-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-103-slide-1:checked ~ .vc-dots label[for="vc-103-slide-1"],
+#vc-103-slide-2:checked ~ .vc-dots label[for="vc-103-slide-2"],
+#vc-103-slide-3:checked ~ .vc-dots label[for="vc-103-slide-3"] {
+    background: #ffffff00;
+}
