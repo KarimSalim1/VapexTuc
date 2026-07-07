@@ -2050,3 +2050,244 @@ body {
 #vc-103-slide-3:checked ~ .vc-dots label[for="vc-103-slide-3"] {
     background: #ffffff00;
 }
+
+
+/* ===============================
+   VAPEX CARRUSEL – PRODUCTOS 15K
+   ============================== */
+
+/* Producto 9 - Blueberry Ice */
+#vc-9-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-9-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-9-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-9-slide-1:checked ~ .vc-a1,
+#vc-9-slide-2:checked ~ .vc-a2,
+#vc-9-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-9-slide-1:checked ~ .vc-dots label[for="vc-9-slide-1"],
+#vc-9-slide-2:checked ~ .vc-dots label[for="vc-9-slide-2"],
+#vc-9-slide-3:checked ~ .vc-dots label[for="vc-9-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 10 - Ananá Helada */
+#vc-10-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-10-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-10-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-10-slide-1:checked ~ .vc-a1,
+#vc-10-slide-2:checked ~ .vc-a2,
+#vc-10-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-10-slide-1:checked ~ .vc-dots label[for="vc-10-slide-1"],
+#vc-10-slide-2:checked ~ .vc-dots label[for="vc-10-slide-2"],
+#vc-10-slide-3:checked ~ .vc-dots label[for="vc-10-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 11 - Cereza y Sandía */
+#vc-11-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-11-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-11-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-11-slide-1:checked ~ .vc-a1,
+#vc-11-slide-2:checked ~ .vc-a2,
+#vc-11-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-11-slide-1:checked ~ .vc-dots label[for="vc-11-slide-1"],
+#vc-11-slide-2:checked ~ .vc-dots label[for="vc-11-slide-2"],
+#vc-11-slide-3:checked ~ .vc-dots label[for="vc-11-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 27 - Blue Razz Ice */
+#vc-27-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-27-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-27-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-27-slide-1:checked ~ .vc-a1,
+#vc-27-slide-2:checked ~ .vc-a2,
+#vc-27-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-27-slide-1:checked ~ .vc-dots label[for="vc-27-slide-1"],
+#vc-27-slide-2:checked ~ .vc-dots label[for="vc-27-slide-2"],
+#vc-27-slide-3:checked ~ .vc-dots label[for="vc-27-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 28 - Strawberry Ice */
+#vc-28-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-28-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-28-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-28-slide-1:checked ~ .vc-a1,
+#vc-28-slide-2:checked ~ .vc-a2,
+#vc-28-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-28-slide-1:checked ~ .vc-dots label[for="vc-28-slide-1"],
+#vc-28-slide-2:checked ~ .vc-dots label[for="vc-28-slide-2"],
+#vc-28-slide-3:checked ~ .vc-dots label[for="vc-28-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 30 - Sakura Grape */
+#vc-30-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-30-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-30-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-30-slide-1:checked ~ .vc-a1,
+#vc-30-slide-2:checked ~ .vc-a2,
+#vc-30-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-30-slide-1:checked ~ .vc-dots label[for="vc-30-slide-1"],
+#vc-30-slide-2:checked ~ .vc-dots label[for="vc-30-slide-2"],
+#vc-30-slide-3:checked ~ .vc-dots label[for="vc-30-slide-3"] {
+    background: #ffffff00;
+}
+
+
+/* ===============================
+   VAPEX CARRUSEL – PRODUCTOS 40K
+   ============================== */
+
+/* Producto 21 - Strawberry Watermelon */
+#vc-21-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-21-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-21-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-21-slide-1:checked ~ .vc-a1,
+#vc-21-slide-2:checked ~ .vc-a2,
+#vc-21-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-21-slide-1:checked ~ .vc-dots label[for="vc-21-slide-1"],
+#vc-21-slide-2:checked ~ .vc-dots label[for="vc-21-slide-2"],
+#vc-21-slide-3:checked ~ .vc-dots label[for="vc-21-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 23 - Cerezas Intensas */
+#vc-23-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-23-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-23-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-23-slide-1:checked ~ .vc-a1,
+#vc-23-slide-2:checked ~ .vc-a2,
+#vc-23-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-23-slide-1:checked ~ .vc-dots label[for="vc-23-slide-1"],
+#vc-23-slide-2:checked ~ .vc-dots label[for="vc-23-slide-2"],
+#vc-23-slide-3:checked ~ .vc-dots label[for="vc-23-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 24 - Cherry Fuse */
+#vc-24-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-24-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-24-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-24-slide-1:checked ~ .vc-a1,
+#vc-24-slide-2:checked ~ .vc-a2,
+#vc-24-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-24-slide-1:checked ~ .vc-dots label[for="vc-24-slide-1"],
+#vc-24-slide-2:checked ~ .vc-dots label[for="vc-24-slide-2"],
+#vc-24-slide-3:checked ~ .vc-dots label[for="vc-24-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 26 - Frutilla Helada */
+#vc-26-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-26-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-26-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-26-slide-1:checked ~ .vc-a1,
+#vc-26-slide-2:checked ~ .vc-a2,
+#vc-26-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-26-slide-1:checked ~ .vc-dots label[for="vc-26-slide-1"],
+#vc-26-slide-2:checked ~ .vc-dots label[for="vc-26-slide-2"],
+#vc-26-slide-3:checked ~ .vc-dots label[for="vc-26-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 31 - Baja Splash (NUEVO) */
+#vc-31-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-31-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-31-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-31-slide-1:checked ~ .vc-a1,
+#vc-31-slide-2:checked ~ .vc-a2,
+#vc-31-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-31-slide-1:checked ~ .vc-dots label[for="vc-31-slide-1"],
+#vc-31-slide-2:checked ~ .vc-dots label[for="vc-31-slide-2"],
+#vc-31-slide-3:checked ~ .vc-dots label[for="vc-31-slide-3"] {
+    background: #ffffff00;
+}
