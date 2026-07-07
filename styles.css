@@ -258,10 +258,10 @@ body {
 .stock-available,
 .stock-unavailable {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.75rem;
+    top: 5px;
+    right: 5px;
+    padding: 0.10rem 0.3rem;
+    font-size: 0.5rem;
     border-radius: 2px;
     z-index: 1;
 }
