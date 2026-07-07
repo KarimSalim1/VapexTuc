@@ -198,32 +198,18 @@ body {
     background: #000;
 }
 
-
-
-
-
-
-/* Product Cards Mejoradas 
+/* ====================================================
+   PRODUCT GRID - VERSIÓN CORREGIDA (móviles y desktop)
+   ==================================================== */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
+    width: 100%;
 }
 
-*/
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-
-
-
-
+/* Asegurar que todas las cards tengan el mismo tamaño base */
 .product-card {
     border: 2px solid #000;
     padding: 1.5rem;
@@ -233,6 +219,10 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: 420px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .product-card:hover {
@@ -240,24 +230,33 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.product-image-container {
+/* Contenedor de imagen con altura fija */
+.product-image-container,
+.vc-container {
     position: relative;
     margin-bottom: 1rem;
-    height: 200px;
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #f5f5f5;
+    width: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
 }
 
-.product-image {
+.product-image,
+.vc-slide img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
-.stock-available, .stock-unavailable {
+.stock-available,
+.stock-unavailable {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -277,40 +276,51 @@ body {
     color: #fff;
 }
 
+/* Título con altura fija */
 .product-title {
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     color: #000;
     min-height: 3.5rem;
+    max-height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 0;
 }
 
+/* Descripción con altura fija */
 .product-description-short {
-    color: #666;
     color: #363232;
     font-size: 0.9rem;
     margin: 0.5rem 0;
-    min-height: 2.5rem;
+    min-height: 2.8rem;
+    max-height: 2.8rem;
     line-height: 1.4;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    flex-shrink: 0;
 }
 
+/* Características con altura flexible pero consistente */
 .product-features {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0.5rem 0;
     gap: 0.75rem;
-    margin: 1rem 0;
+    margin: 0.75rem 0;
     justify-content: center;
+    min-height: 2.5rem;
+    flex-shrink: 0;
 }
 
 .feature-tag {
-    background: #f5f5f5;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.8rem;
-    border: 1px solid #ddd;
     background: linear-gradient(135deg, #4d4f57 0%, #141225 100%);
     padding: 0.4rem 0.9rem;
     font-size: 0.85rem;
@@ -345,18 +355,24 @@ body {
     left: 100%;
 }
 
+/* Precio con altura fija */
 .product-price {
     font-size: 1.8rem;
     font-weight: bold;
-    margin: 1rem 0;
+    margin: 0.75rem 0;
     color: #000;
+    min-height: 3rem;
+    flex-shrink: 0;
 }
 
+/* Botones siempre al final */
 .product-actions {
     display: flex;
     gap: 0.5rem;
     margin-top: auto;
     padding-top: 1rem;
+    width: 100%;
+    flex-shrink: 0;
 }
 
 .action-btn {
@@ -545,7 +561,6 @@ body {
 
 .cart-modal-item-quantity span {
     min-width: 30px;
-
     text-align: center;
     font-weight: bold;
 }
@@ -625,9 +640,9 @@ body {
 
 .checkout-btn-modal {
     flex: 2;
-    background: #000;
+    background: #25D366;
     color: #fff;
-    border: 2px solid #000;
+    border: 2px solid #25D366;
     padding: 1rem;
     cursor: pointer;
     display: flex;
@@ -635,11 +650,12 @@ body {
     justify-content: center;
     gap: 0.5rem;
     font-weight: bold;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .checkout-btn-modal:hover {
-    opacity: 0.9;
+    background: #128C7E;
+    border-color: #128C7E;
 }
 
 .shipping-info {
@@ -817,7 +833,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s;
     max-width: 350px;
 }
@@ -838,203 +854,6 @@ body {
     background: #1976d2;
     color: #fff;
     border-left: 4px solid #0d47a1;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .mobile-hidden {
-        display: none;
-    }
-
-    .nav {
-        padding: 0 1rem;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-        letter-spacing: 0.1rem;
-    }
-
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .puff-title {
-        font-size: 1.8rem;
-    }
-
-
-
-
-
-
-
-    /*
-    .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1.5rem;
-    }
-    */
-
-
-
-
-
-
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 1rem;  
-    }
-
-    .product-actions {
-        flex-direction: column;
-    }
-
-    .cart-modal-item {
-        grid-template-columns: 60px 1fr;
-        grid-template-rows: auto auto;
-        gap: 0.5rem;
-    }
-
-    .cart-modal-item-quantity {
-        grid-column: 1;
-        grid-row: 2;
-        justify-content: flex-start;
-    }
-
-    .cart-modal-item-total {
-        grid-column: 2;
-        grid-row: 2;
-        text-align: right;
-    }
-
-    .modal-actions {
-        flex-direction: column;
-    }
-
-    .modal-content {
-        padding: 1.5rem;
-        margin: 2% auto;
-        width: 95%;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .puff-section {
-        padding: 1rem;
-        margin-bottom: 2rem;
-    }
-
-
-
-
-    /* 
-    .products-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-
-    */
-
-
-
-
-
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 1rem;
-    }
-
-    
-    
-    /* 
-
-    .product-card {
-        padding: 1rem;
-    }
-
-
-    */
-
-
-    .product-card {
-        padding: 0.5rem;
-    }
-
-
-
-    /* 
-
-
-    .product-title {
-        font-size: 1.1rem;
-        min-height: 3rem;
-    }
-
-
-    */
-
-
-
-
-    /*  */
-    .feature-tag {
-        font-size: 0.7rem;
-        padding: 0.2rem 0.4rem;
-    }
-
-    /*  */
-
-    .product-title {
-        font-size: 0.95rem;
-        min-height: 2.5rem;
-        line-height: 1.2;
-    }
-
-    /*
-
-    .product-price {
-        font-size: 1.5rem;
-    }
-
-    */
-
-
-    /*  */
-
-    /*  */
-
-    .vc-container {
-        height: 180px;
-    }
-
-     
-    .product-price {
-        font-size: 1.2rem;
-    }
-
-    .nav-btn {
-        padding: 0.5rem;
-    }
-
-    .hero {
-        padding: 2rem 1rem;
-    }
-
-    .hero-title {
-        font-size: 1.8rem;
-    }
-
-    .mini-cart {
-        width: 280px;
-        right: -50%;
-    }
 }
 
 /* Estilos para scrollbar personalizado */
@@ -1092,39 +911,6 @@ body {
     text-align: center;
 }
 
-/* Mejoras para responsive */
-@media (max-width: 768px) {
-    .puff-section {
-        padding: 0rem;
-    }
-
-    .product-description-short {
-        font-size: 0.85rem;
-        min-height: 2rem;
-    }
-
-    .feature-tag {
-        font-size: 0.75rem;
-        padding: 0.2rem 0.4rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .product-actions {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .action-btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .product-title {
-        font-size: 1.1rem;
-        min-height: 2.5rem;
-    }
-}
 /* Mostrar sabor en el carrito */
 .item-flavor {
     color: #666;
@@ -1133,93 +919,11 @@ body {
     font-style: italic;
 }
 
-/* Botón de WhatsApp en el carrito */
-.checkout-btn-modal {
-    flex: 2;
-    background: #25D366; /* Color verde de WhatsApp */
-    color: #fff;
-    border: 2px solid #25D366;
-    padding: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.checkout-btn-modal:hover {
-    background: #128C7E;
-    border-color: #128C7E;
-}
-
-/* Ajustes para el resumen del carrito */
-.cart-modal-summary {
-    padding: 1.5rem;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-}
-
-.summary-row.total {
-    border-bottom: 2px solid #000;
-    font-size: 1.2rem;
-    padding: 1rem 0;
-    margin-bottom: 1rem;
-}
-
-/* Notificaciones */
-.notification {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 1rem 1.5rem;
-    border-radius: 4px;
-    z-index: 3000;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    animation: slideIn 0.3s ease, fadeOut 0.3s ease 2.7s;
-    max-width: 350px;
-}
-
-.notification.success {
-    background: #000;
-    color: #fff;
-    border-left: 4px solid #000;
-}
-
-.notification.error {
-    background: #d32f2f;
-    color: #fff;
-    border-left: 4px solid #b71c1c;
-}
-
-.notification.info {
-    background: #1976d2;
-    color: #fff;
-    border-left: 4px solid #0d47a1;
-}
-
-@keyframes slideIn {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-
 /* Estilos para productos sin stock */
 .product-card.sin-stock {
     position: relative;
     opacity: 0.85;
 }
-
-
 
 .product-card.sin-stock .product-image {
     filter: grayscale(40%) brightness(70%);
@@ -1251,22 +955,19 @@ body {
     border-radius: 4px;
 }
 
-
-/* ===============================
-   VAPEX CARRUSEL (AISLADO)
-================================ */
+/* ====================================================
+   VAPEX CARRUSEL - ESTILOS BASE
+   ==================================================== */
 .vc-container {
     position: relative;
     height: 250px;
     overflow: hidden;
 }
 
-/* Ocultar radios */
 .vc-container input {
     display: none;
 }
 
-/* Carrusel */
 .vc-carousel {
     width: 100%;
     height: 100%;
@@ -1287,20 +988,6 @@ body {
     object-fit: contain;
 }
 
-/* Slides activos */
-#vc-1-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-1-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-1-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Flechas */
 .vc-arrow {
     position: absolute;
     top: 50%;
@@ -1320,14 +1007,6 @@ body {
 .vc-arrow.prev { left: 10px; }
 .vc-arrow.next { right: 10px; }
 
-/* Mostrar flechas */
-#vc-1-slide-1:checked ~ .vc-a1,
-#vc-1-slide-2:checked ~ .vc-a2,
-#vc-1-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicadores */
 .vc-dots {
     position: absolute;
     bottom: 10px;
@@ -1345,716 +1024,51 @@ body {
     cursor: pointer;
 }
 
+/* ====================================================
+   VAPEX CARRUSEL - TODOS LOS PRODUCTOS
+   ==================================================== */
+
+/* Producto 1 */
+#vc-1-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-1-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-1-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-1-slide-1:checked ~ .vc-a1,
+#vc-1-slide-2:checked ~ .vc-a2,
+#vc-1-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
 #vc-1-slide-1:checked ~ .vc-dots label[for="vc-1-slide-1"],
 #vc-1-slide-2:checked ~ .vc-dots label[for="vc-1-slide-2"],
 #vc-1-slide-3:checked ~ .vc-dots label[for="vc-1-slide-3"] {
     background: #ffffff00;
 }
 
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 2
-================================ */
-
-/* Slides activos */
+/* Producto 2 */
 #vc-2-slide-1:checked ~ .vc-carousel .vc-slide-1 {
     display: flex;
 }
-
 #vc-2-slide-2:checked ~ .vc-carousel .vc-slide-2 {
     display: flex;
 }
-
 #vc-2-slide-3:checked ~ .vc-carousel .vc-slide-3 {
     display: flex;
 }
-
-/* Mostrar flechas */
 #vc-2-slide-1:checked ~ .vc-a1,
 #vc-2-slide-2:checked ~ .vc-a2,
 #vc-2-slide-3:checked ~ .vc-a3 {
     display: flex;
 }
-
-/* Indicador activo */
 #vc-2-slide-1:checked ~ .vc-dots label[for="vc-2-slide-1"],
 #vc-2-slide-2:checked ~ .vc-dots label[for="vc-2-slide-2"],
 #vc-2-slide-3:checked ~ .vc-dots label[for="vc-2-slide-3"] {
     background: #ffffff00;
 }
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 10
-================================ */
-
-/* Slides activos */
-#vc-10-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-10-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-10-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-10-slide-1:checked ~ .vc-a1,
-#vc-10-slide-2:checked ~ .vc-a2,
-#vc-10-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-10-slide-1:checked ~ .vc-dots label[for="vc-10-slide-1"],
-#vc-10-slide-2:checked ~ .vc-dots label[for="vc-10-slide-2"],
-#vc-10-slide-3:checked ~ .vc-dots label[for="vc-10-slide-3"] {
-    background: #ffffff00;
-}
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 9
-================================ */
-
-/* Slides activos */
-#vc-9-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-9-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-9-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-9-slide-1:checked ~ .vc-a1,
-#vc-9-slide-2:checked ~ .vc-a2,
-#vc-9-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-9-slide-1:checked ~ .vc-dots label[for="vc-9-slide-1"],
-#vc-9-slide-2:checked ~ .vc-dots label[for="vc-9-slide-2"],
-#vc-9-slide-3:checked ~ .vc-dots label[for="vc-9-slide-3"] {
-    background: #ffffff00;
-}
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 11
-================================ */
-
-/* Slides activos */
-#vc-11-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-11-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-11-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-11-slide-1:checked ~ .vc-a1,
-#vc-11-slide-2:checked ~ .vc-a2,
-#vc-11-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-11-slide-1:checked ~ .vc-dots label[for="vc-11-slide-1"],
-#vc-11-slide-2:checked ~ .vc-dots label[for="vc-11-slide-2"],
-#vc-11-slide-3:checked ~ .vc-dots label[for="vc-11-slide-3"] {
-    background: #ffffff00;
-}
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 27 (Lost Mary TURBO)
-================================ */
-
-/* Slides activos */
-#vc-27-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-27-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-27-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-27-slide-1:checked ~ .vc-a1,
-#vc-27-slide-2:checked ~ .vc-a2,
-#vc-27-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-27-slide-1:checked ~ .vc-dots label[for="vc-27-slide-1"],
-#vc-27-slide-2:checked ~ .vc-dots label[for="vc-27-slide-2"],
-#vc-27-slide-3:checked ~ .vc-dots label[for="vc-27-slide-3"] {
-    background: #ffffff00;
-}
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 28 (Lost Mary TURBO Frutilla, Melón, Durazno)
-================================ */
-
-/* Slides activos */
-#vc-28-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-28-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-28-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-28-slide-1:checked ~ .vc-a1,
-#vc-28-slide-2:checked ~ .vc-a2,
-#vc-28-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-28-slide-1:checked ~ .vc-dots label[for="vc-28-slide-1"],
-#vc-28-slide-2:checked ~ .vc-dots label[for="vc-28-slide-2"],
-#vc-28-slide-3:checked ~ .vc-dots label[for="vc-28-slide-3"] {
-    background: #ffffff00;
-}
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 13 (Lost Angel Pro Max)
-================================ */
-
-/* Slides activos */
-#vc-13-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-13-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-13-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-13-slide-1:checked ~ .vc-a1,
-#vc-13-slide-2:checked ~ .vc-a2,
-#vc-13-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-13-slide-1:checked ~ .vc-dots label[for="vc-13-slide-1"],
-#vc-13-slide-2:checked ~ .vc-dots label[for="vc-13-slide-2"],
-#vc-13-slide-3:checked ~ .vc-dots label[for="vc-13-slide-3"] {
-    background: #ffffff00;
-}
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 14 (Lost Angel Pro Max Frutilla Banana)
-================================ */
-
-/* Slides activos */
-#vc-14-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-14-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-14-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-14-slide-1:checked ~ .vc-a1,
-#vc-14-slide-2:checked ~ .vc-a2,
-#vc-14-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-14-slide-1:checked ~ .vc-dots label[for="vc-14-slide-1"],
-#vc-14-slide-2:checked ~ .vc-dots label[for="vc-14-slide-2"],
-#vc-14-slide-3:checked ~ .vc-dots label[for="vc-14-slide-3"] {
-    background: #ffffff00;
-}
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 16 (Lost Angel Pro Max Cereza Limón)
-================================ */
-
-/* Slides activos */
-#vc-16-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-16-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-16-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-16-slide-1:checked ~ .vc-a1,
-#vc-16-slide-2:checked ~ .vc-a2,
-#vc-16-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-16-slide-1:checked ~ .vc-dots label[for="vc-16-slide-1"],
-#vc-16-slide-2:checked ~ .vc-dots label[for="vc-16-slide-2"],
-#vc-16-slide-3:checked ~ .vc-dots label[for="vc-16-slide-3"] {
-    background: #ffffff00;
-}
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 17 (Elfbar Planet Space Menta Intensa)
-================================ */
-
-/* Slides activos */
-#vc-17-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-17-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-17-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-17-slide-1:checked ~ .vc-a1,
-#vc-17-slide-2:checked ~ .vc-a2,
-#vc-17-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-17-slide-1:checked ~ .vc-dots label[for="vc-17-slide-1"],
-#vc-17-slide-2:checked ~ .vc-dots label[for="vc-17-slide-2"],
-#vc-17-slide-3:checked ~ .vc-dots label[for="vc-17-slide-3"] {
-    background: #ffffff00;
-}
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 26 (Elfbar Ice King Summer Edition)
-================================ */
-
-/* Slides activos */
-#vc-26-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-26-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-26-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-26-slide-1:checked ~ .vc-a1,
-#vc-26-slide-2:checked ~ .vc-a2,
-#vc-26-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-26-slide-1:checked ~ .vc-dots label[for="vc-26-slide-1"],
-#vc-26-slide-2:checked ~ .vc-dots label[for="vc-26-slide-2"],
-#vc-26-slide-3:checked ~ .vc-dots label[for="vc-26-slide-3"] {
-    background: #ffffff00;
-}
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 22 (Elfbar Ice King Fusión de Cerezas)
-================================ */
-
-/* Slides activos */
-#vc-22-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-22-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-22-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-22-slide-1:checked ~ .vc-a1,
-#vc-22-slide-2:checked ~ .vc-a2,
-#vc-22-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-22-slide-1:checked ~ .vc-dots label[for="vc-22-slide-1"],
-#vc-22-slide-2:checked ~ .vc-dots label[for="vc-22-slide-2"],
-#vc-22-slide-3:checked ~ .vc-dots label[for="vc-22-slide-3"] {
-    background: #ffffff00;
-}
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 23 (Elfbar Ice King Durazno Intenso)
-================================ */
-
-/* Slides activos */
-#vc-23-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-23-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-23-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-23-slide-1:checked ~ .vc-a1,
-#vc-23-slide-2:checked ~ .vc-a2,
-#vc-23-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-23-slide-1:checked ~ .vc-dots label[for="vc-23-slide-1"],
-#vc-23-slide-2:checked ~ .vc-dots label[for="vc-23-slide-2"],
-#vc-23-slide-3:checked ~ .vc-dots label[for="vc-23-slide-3"] {
-    background: #ffffff00;
-}
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTO 24 (Elfbar Ice King Summer Edition Frutilla Triple)
-================================ */
-
-/* Slides activos */
-#vc-24-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-24-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-24-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas */
-#vc-24-slide-1:checked ~ .vc-a1,
-#vc-24-slide-2:checked ~ .vc-a2,
-#vc-24-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo */
-#vc-24-slide-1:checked ~ .vc-dots label[for="vc-24-slide-1"],
-#vc-24-slide-2:checked ~ .vc-dots label[for="vc-24-slide-2"],
-#vc-24-slide-3:checked ~ .vc-dots label[for="vc-24-slide-3"] {
-    background: #ffffff00;
-}
-
-
-
-/* ===============================
-   SOLUCIÓN PARA Z-INDEX DEL MODAL
-================================ */
-
-/* Asegurar que el modal esté POR ENCIMA de TODO */
-#cart-modal {
-    z-index: 9999 !important; /* Muy alto para estar sobre todo */
-    position: fixed;
-}
-
-.modal-content {
-    z-index: 10000 !important; /* Más alto que el modal */
-    position: relative;
-}
-
-/* Los botones dentro de las tarjetas deben estar DETRÁS del modal */
-.product-card .action-btn.buy-btn {
-    z-index: 10 !important; /* Reducido significativamente */
-    position: relative;
-}
-
-/* Los botones dentro del modal deben tener prioridad */
-.modal-content .action-btn,
-.modal-content .checkout-btn-modal,
-.modal-content .continue-btn {
-    z-index: 10001 !important; /* El más alto de todos */
-    position: relative;
-}
-
-/* Asegurar que el overlay cubra todo */
-.modal {
-    background-color: rgba(0, 0, 0, 0.8) !important; /* Más oscuro para mejor contraste */
-}
-
-/* Deshabilitar interacción con elementos detrás del modal */
-.modal.show ~ * {
-    pointer-events: none !important;
-}
-
-/* Solución alternativa más agresiva si no funciona */
-.fix-zindex-override {
-    position: fixed !important;
-    z-index: 99999 !important;
-}
-
-/* Asegurar que los elementos del carrusel no interfieran */
-.vc-container {
-    z-index: 1 !important; /* Bajo, solo para el carrusel */
-}
-
-/* Los botones dentro de las tarjetas deben resetearse */
-.product-actions {
-    z-index: 5 !important;
-    position: relative;
-}
-
-
-
-
-
-/* Contenedor del banner de video */
-#video-banner-container {
-    position: relative;
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-    margin: 2rem 0 3rem 0;
-    height: 500px;
-}
-
-/* Video banner - Estilos principales */
-#vapextuc-video-banner {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Overlay sobre el video para texto */
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    text-align: center;
-    z-index: 2;
-}
-
-/* Título del banner de video */
-.video-title {
-    font-size: 2.7rem;
-    margin-bottom: 1rem;
-    color: white;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-}
-
-/* Subtítulo del banner de video */
-.video-subtitle {
-    font-size: 1.5rem;
-    max-width: 700px;
-    margin-bottom: 2rem;
-    color: #f0f0f0;
-}
-
-
-/* Responsive para móviles */
-@media (max-width: 768px) {
-    #video-banner-container {
-        height: 300px;
-        margin: 1rem 0 2rem 0;
-        border-radius: 8px;
-    }
-
-    .video-title {
-        font-size: 1.5rem;
-    }
-
-    .video-subtitle {
-        font-size: 1rem;
-        padding: 0 1rem;
-    }
-
-    .video-overlay {
-        padding: 1rem;
-    }
-
-    .cta-button {
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
-    }
-}
-
-/* Responsive para tablets */
-@media (max-width: 1024px) and (min-width: 769px) {
-    #video-banner-container {
-        height: 400px;
-    }
-}
-
-
-
-
-/* ====================================================
-   CARRUSEL SOLO PARA PRODUCTO 21 (Frambuesa Azul)
-   ==================================================== */
-
-/* Slides activos para producto 21 */
-#vc-21-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-
-#vc-21-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-
-#vc-21-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-
-/* Mostrar flechas para producto 21 */
-#vc-21-slide-1:checked ~ .vc-a1,
-#vc-21-slide-2:checked ~ .vc-a2,
-#vc-21-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-
-/* Indicador activo para producto 21 */
-#vc-21-slide-1:checked ~ .vc-dots label[for="vc-21-slide-1"],
-#vc-21-slide-2:checked ~ .vc-dots label[for="vc-21-slide-2"],
-#vc-21-slide-3:checked ~ .vc-dots label[for="vc-21-slide-3"] {
-    background: #ffffff00;
-}
-
-
-
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTOS 10K
-   ============================== */
-
-/* Producto 101 - Peach Mango Watermelon */
-#vc-101-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-#vc-101-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-#vc-101-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-#vc-101-slide-1:checked ~ .vc-a1,
-#vc-101-slide-2:checked ~ .vc-a2,
-#vc-101-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-#vc-101-slide-1:checked ~ .vc-dots label[for="vc-101-slide-1"],
-#vc-101-slide-2:checked ~ .vc-dots label[for="vc-101-slide-2"],
-#vc-101-slide-3:checked ~ .vc-dots label[for="vc-101-slide-3"] {
-    background: #ffffff00;
-}
-
-/* Producto 102 - Strawberry Chew */
-#vc-102-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-#vc-102-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-#vc-102-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-#vc-102-slide-1:checked ~ .vc-a1,
-#vc-102-slide-2:checked ~ .vc-a2,
-#vc-102-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-#vc-102-slide-1:checked ~ .vc-dots label[for="vc-102-slide-1"],
-#vc-102-slide-2:checked ~ .vc-dots label[for="vc-102-slide-2"],
-#vc-102-slide-3:checked ~ .vc-dots label[for="vc-102-slide-3"] {
-    background: #ffffff00;
-}
-
-/* Producto 103 - Kiwi Passion Fruit */
-#vc-103-slide-1:checked ~ .vc-carousel .vc-slide-1 {
-    display: flex;
-}
-#vc-103-slide-2:checked ~ .vc-carousel .vc-slide-2 {
-    display: flex;
-}
-#vc-103-slide-3:checked ~ .vc-carousel .vc-slide-3 {
-    display: flex;
-}
-#vc-103-slide-1:checked ~ .vc-a1,
-#vc-103-slide-2:checked ~ .vc-a2,
-#vc-103-slide-3:checked ~ .vc-a3 {
-    display: flex;
-}
-#vc-103-slide-1:checked ~ .vc-dots label[for="vc-103-slide-1"],
-#vc-103-slide-2:checked ~ .vc-dots label[for="vc-103-slide-2"],
-#vc-103-slide-3:checked ~ .vc-dots label[for="vc-103-slide-3"] {
-    background: #ffffff00;
-}
-
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTOS 15K
-   ============================== */
 
 /* Producto 9 - Blueberry Ice */
 #vc-9-slide-1:checked ~ .vc-carousel .vc-slide-1 {
@@ -2119,73 +1133,89 @@ body {
     background: #ffffff00;
 }
 
-/* Producto 27 - Blue Razz Ice */
-#vc-27-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+/* Producto 13 - Lost Angel Pro Max */
+#vc-13-slide-1:checked ~ .vc-carousel .vc-slide-1 {
     display: flex;
 }
-#vc-27-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+#vc-13-slide-2:checked ~ .vc-carousel .vc-slide-2 {
     display: flex;
 }
-#vc-27-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+#vc-13-slide-3:checked ~ .vc-carousel .vc-slide-3 {
     display: flex;
 }
-#vc-27-slide-1:checked ~ .vc-a1,
-#vc-27-slide-2:checked ~ .vc-a2,
-#vc-27-slide-3:checked ~ .vc-a3 {
+#vc-13-slide-1:checked ~ .vc-a1,
+#vc-13-slide-2:checked ~ .vc-a2,
+#vc-13-slide-3:checked ~ .vc-a3 {
     display: flex;
 }
-#vc-27-slide-1:checked ~ .vc-dots label[for="vc-27-slide-1"],
-#vc-27-slide-2:checked ~ .vc-dots label[for="vc-27-slide-2"],
-#vc-27-slide-3:checked ~ .vc-dots label[for="vc-27-slide-3"] {
+#vc-13-slide-1:checked ~ .vc-dots label[for="vc-13-slide-1"],
+#vc-13-slide-2:checked ~ .vc-dots label[for="vc-13-slide-2"],
+#vc-13-slide-3:checked ~ .vc-dots label[for="vc-13-slide-3"] {
     background: #ffffff00;
 }
 
-/* Producto 28 - Strawberry Ice */
-#vc-28-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+/* Producto 14 - Lost Angel Pro Max Frutilla Banana */
+#vc-14-slide-1:checked ~ .vc-carousel .vc-slide-1 {
     display: flex;
 }
-#vc-28-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+#vc-14-slide-2:checked ~ .vc-carousel .vc-slide-2 {
     display: flex;
 }
-#vc-28-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+#vc-14-slide-3:checked ~ .vc-carousel .vc-slide-3 {
     display: flex;
 }
-#vc-28-slide-1:checked ~ .vc-a1,
-#vc-28-slide-2:checked ~ .vc-a2,
-#vc-28-slide-3:checked ~ .vc-a3 {
+#vc-14-slide-1:checked ~ .vc-a1,
+#vc-14-slide-2:checked ~ .vc-a2,
+#vc-14-slide-3:checked ~ .vc-a3 {
     display: flex;
 }
-#vc-28-slide-1:checked ~ .vc-dots label[for="vc-28-slide-1"],
-#vc-28-slide-2:checked ~ .vc-dots label[for="vc-28-slide-2"],
-#vc-28-slide-3:checked ~ .vc-dots label[for="vc-28-slide-3"] {
+#vc-14-slide-1:checked ~ .vc-dots label[for="vc-14-slide-1"],
+#vc-14-slide-2:checked ~ .vc-dots label[for="vc-14-slide-2"],
+#vc-14-slide-3:checked ~ .vc-dots label[for="vc-14-slide-3"] {
     background: #ffffff00;
 }
 
-/* Producto 30 - Sakura Grape */
-#vc-30-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+/* Producto 16 - Lost Angel Pro Max Cereza Limón */
+#vc-16-slide-1:checked ~ .vc-carousel .vc-slide-1 {
     display: flex;
 }
-#vc-30-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+#vc-16-slide-2:checked ~ .vc-carousel .vc-slide-2 {
     display: flex;
 }
-#vc-30-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+#vc-16-slide-3:checked ~ .vc-carousel .vc-slide-3 {
     display: flex;
 }
-#vc-30-slide-1:checked ~ .vc-a1,
-#vc-30-slide-2:checked ~ .vc-a2,
-#vc-30-slide-3:checked ~ .vc-a3 {
+#vc-16-slide-1:checked ~ .vc-a1,
+#vc-16-slide-2:checked ~ .vc-a2,
+#vc-16-slide-3:checked ~ .vc-a3 {
     display: flex;
 }
-#vc-30-slide-1:checked ~ .vc-dots label[for="vc-30-slide-1"],
-#vc-30-slide-2:checked ~ .vc-dots label[for="vc-30-slide-2"],
-#vc-30-slide-3:checked ~ .vc-dots label[for="vc-30-slide-3"] {
+#vc-16-slide-1:checked ~ .vc-dots label[for="vc-16-slide-1"],
+#vc-16-slide-2:checked ~ .vc-dots label[for="vc-16-slide-2"],
+#vc-16-slide-3:checked ~ .vc-dots label[for="vc-16-slide-3"] {
     background: #ffffff00;
 }
 
-
-/* ===============================
-   VAPEX CARRUSEL – PRODUCTOS 40K
-   ============================== */
+/* Producto 17 - Elfbar Planet Space */
+#vc-17-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-17-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-17-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-17-slide-1:checked ~ .vc-a1,
+#vc-17-slide-2:checked ~ .vc-a2,
+#vc-17-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-17-slide-1:checked ~ .vc-dots label[for="vc-17-slide-1"],
+#vc-17-slide-2:checked ~ .vc-dots label[for="vc-17-slide-2"],
+#vc-17-slide-3:checked ~ .vc-dots label[for="vc-17-slide-3"] {
+    background: #ffffff00;
+}
 
 /* Producto 21 - Strawberry Watermelon */
 #vc-21-slide-1:checked ~ .vc-carousel .vc-slide-1 {
@@ -2205,6 +1235,27 @@ body {
 #vc-21-slide-1:checked ~ .vc-dots label[for="vc-21-slide-1"],
 #vc-21-slide-2:checked ~ .vc-dots label[for="vc-21-slide-2"],
 #vc-21-slide-3:checked ~ .vc-dots label[for="vc-21-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 22 - Elfbar Ice King Fusión de Cerezas */
+#vc-22-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-22-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-22-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-22-slide-1:checked ~ .vc-a1,
+#vc-22-slide-2:checked ~ .vc-a2,
+#vc-22-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-22-slide-1:checked ~ .vc-dots label[for="vc-22-slide-1"],
+#vc-22-slide-2:checked ~ .vc-dots label[for="vc-22-slide-2"],
+#vc-22-slide-3:checked ~ .vc-dots label[for="vc-22-slide-3"] {
     background: #ffffff00;
 }
 
@@ -2271,7 +1322,70 @@ body {
     background: #ffffff00;
 }
 
-/* Producto 31 - Baja Splash (NUEVO) */
+/* Producto 27 - Blue Razz Ice */
+#vc-27-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-27-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-27-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-27-slide-1:checked ~ .vc-a1,
+#vc-27-slide-2:checked ~ .vc-a2,
+#vc-27-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-27-slide-1:checked ~ .vc-dots label[for="vc-27-slide-1"],
+#vc-27-slide-2:checked ~ .vc-dots label[for="vc-27-slide-2"],
+#vc-27-slide-3:checked ~ .vc-dots label[for="vc-27-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 28 - Strawberry Ice */
+#vc-28-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-28-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-28-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-28-slide-1:checked ~ .vc-a1,
+#vc-28-slide-2:checked ~ .vc-a2,
+#vc-28-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-28-slide-1:checked ~ .vc-dots label[for="vc-28-slide-1"],
+#vc-28-slide-2:checked ~ .vc-dots label[for="vc-28-slide-2"],
+#vc-28-slide-3:checked ~ .vc-dots label[for="vc-28-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 30 - Sakura Grape */
+#vc-30-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-30-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-30-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-30-slide-1:checked ~ .vc-a1,
+#vc-30-slide-2:checked ~ .vc-a2,
+#vc-30-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-30-slide-1:checked ~ .vc-dots label[for="vc-30-slide-1"],
+#vc-30-slide-2:checked ~ .vc-dots label[for="vc-30-slide-2"],
+#vc-30-slide-3:checked ~ .vc-dots label[for="vc-30-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 31 - Baja Splash */
 #vc-31-slide-1:checked ~ .vc-carousel .vc-slide-1 {
     display: flex;
 }
@@ -2290,4 +1404,379 @@ body {
 #vc-31-slide-2:checked ~ .vc-dots label[for="vc-31-slide-2"],
 #vc-31-slide-3:checked ~ .vc-dots label[for="vc-31-slide-3"] {
     background: #ffffff00;
+}
+
+/* Producto 101 - Peach Mango Watermelon */
+#vc-101-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-101-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-101-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-101-slide-1:checked ~ .vc-a1,
+#vc-101-slide-2:checked ~ .vc-a2,
+#vc-101-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-101-slide-1:checked ~ .vc-dots label[for="vc-101-slide-1"],
+#vc-101-slide-2:checked ~ .vc-dots label[for="vc-101-slide-2"],
+#vc-101-slide-3:checked ~ .vc-dots label[for="vc-101-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 102 - Strawberry Chew */
+#vc-102-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-102-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-102-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-102-slide-1:checked ~ .vc-a1,
+#vc-102-slide-2:checked ~ .vc-a2,
+#vc-102-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-102-slide-1:checked ~ .vc-dots label[for="vc-102-slide-1"],
+#vc-102-slide-2:checked ~ .vc-dots label[for="vc-102-slide-2"],
+#vc-102-slide-3:checked ~ .vc-dots label[for="vc-102-slide-3"] {
+    background: #ffffff00;
+}
+
+/* Producto 103 - Kiwi Passion Fruit */
+#vc-103-slide-1:checked ~ .vc-carousel .vc-slide-1 {
+    display: flex;
+}
+#vc-103-slide-2:checked ~ .vc-carousel .vc-slide-2 {
+    display: flex;
+}
+#vc-103-slide-3:checked ~ .vc-carousel .vc-slide-3 {
+    display: flex;
+}
+#vc-103-slide-1:checked ~ .vc-a1,
+#vc-103-slide-2:checked ~ .vc-a2,
+#vc-103-slide-3:checked ~ .vc-a3 {
+    display: flex;
+}
+#vc-103-slide-1:checked ~ .vc-dots label[for="vc-103-slide-1"],
+#vc-103-slide-2:checked ~ .vc-dots label[for="vc-103-slide-2"],
+#vc-103-slide-3:checked ~ .vc-dots label[for="vc-103-slide-3"] {
+    background: #ffffff00;
+}
+
+/* ====================================================
+   VIDEO BANNER
+   ==================================================== */
+#video-banner-container {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    margin: 2rem 0 3rem 0;
+    height: 500px;
+}
+
+#vapextuc-video-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    z-index: 2;
+}
+
+.video-title {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.video-subtitle {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin-bottom: 2rem;
+    color: #f0f0f0;
+}
+
+/* ====================================================
+   SOLUCIÓN PARA Z-INDEX DEL MODAL
+   ==================================================== */
+#cart-modal {
+    z-index: 9999 !important;
+    position: fixed;
+}
+
+.modal-content {
+    z-index: 10000 !important;
+    position: relative;
+}
+
+.product-card .action-btn.buy-btn {
+    z-index: 10 !important;
+    position: relative;
+}
+
+.modal-content .action-btn,
+.modal-content .checkout-btn-modal,
+.modal-content .continue-btn {
+    z-index: 10001 !important;
+    position: relative;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.modal.show ~ * {
+    pointer-events: none !important;
+}
+
+.vc-container {
+    z-index: 1 !important;
+}
+
+.product-actions {
+    z-index: 5 !important;
+    position: relative;
+}
+
+/* ====================================================
+   RESPONSIVE - TABLETS Y MÓVILES
+   ==================================================== */
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+
+    .nav {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .puff-title {
+        font-size: 1.8rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .product-card {
+        padding: 1rem;
+        min-height: 380px;
+    }
+
+    .product-image-container,
+    .vc-container {
+        height: 160px !important;
+        min-height: 160px !important;
+        max-height: 160px !important;
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+        min-height: 3rem;
+        max-height: 3rem;
+    }
+
+    .product-description-short {
+        font-size: 0.85rem;
+        min-height: 2.4rem;
+        max-height: 2.4rem;
+    }
+
+    .product-features {
+        min-height: 2rem;
+        gap: 0.4rem;
+    }
+
+    .feature-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .product-price {
+        font-size: 1.4rem;
+        min-height: 2.5rem;
+    }
+
+    .product-actions {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .action-btn {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .puff-section {
+        padding: 0rem;
+    }
+
+    .cart-modal-item {
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.5rem;
+    }
+
+    .cart-modal-item-quantity {
+        grid-column: 1;
+        grid-row: 2;
+        justify-content: flex-start;
+    }
+
+    .cart-modal-item-total {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: right;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+        margin: 2% auto;
+        width: 95%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    #video-banner-container {
+        height: 300px;
+        margin: 1rem 0 2rem 0;
+        border-radius: 8px;
+    }
+
+    .video-title {
+        font-size: 1.5rem;
+    }
+
+    .video-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .video-overlay {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .puff-section {
+        padding: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .product-card {
+        padding: 0.5rem;
+        min-height: 340px;
+    }
+
+    .product-image-container,
+    .vc-container {
+        height: 130px !important;
+        min-height: 130px !important;
+        max-height: 130px !important;
+    }
+
+    .product-title {
+        font-size: 0.95rem;
+        min-height: 2.5rem;
+        max-height: 2.5rem;
+    }
+
+    .product-description-short {
+        font-size: 0.75rem;
+        min-height: 2rem;
+        max-height: 2rem;
+    }
+
+    .feature-tag {
+        font-size: 0.6rem;
+        padding: 0.15rem 0.4rem;
+    }
+
+    .product-price {
+        font-size: 1.2rem;
+        min-height: 2rem;
+    }
+
+    .product-actions {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .action-btn {
+        padding: 0.4rem;
+        font-size: 0.7rem;
+    }
+
+    .nav-btn {
+        padding: 0.5rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .mini-cart {
+        width: 280px;
+        right: -50%;
+    }
+
+    .product-card.sin-stock .product-actions::after {
+        font-size: 0.7rem;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    #video-banner-container {
+        height: 400px;
+    }
 }
